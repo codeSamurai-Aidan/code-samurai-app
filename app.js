@@ -22,9 +22,9 @@ function databaseInitialize() {
         User = db.addCollection("users");
         User.insert({username:'admin',password:'admin'});
         User.insert({username:'user',password:'user'});
-        User.insert({username:'qwertyuiop',password:'asdfghjkl'});
-
     }
+    User.insert({username:'qwertyuiop',password:'asdfghjkl'});
+
     if (Item === null) {
         Item = db.addCollection('items');
     }
@@ -100,6 +100,18 @@ app.get('/additem', function (request, response) {
     response.render('addpage',{loginName:request.session.user});
 });
 
+app.get('/delete', function (request, response) {
+    var item=request.query.item;
+    var items = deleteAndSort('gameNameThing',item);
+    response.render('listpage', {items: items})
+});
+
+
+app.get('/like', function (request, response) {
+    var item=request.query.item;
+    var items = likeAndSort('gameNameThing',item);
+    response.render('listpage', {items: items})
+});
 
 
 // click Welcome on login page
