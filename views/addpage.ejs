@@ -8,13 +8,12 @@
 
     <form method="post" action="saveitem">
 
-
-
-
-
-
         Added by: <input type="text" name="addedBy" value="<%=loginName%>" readonly/>
-
+        Game: <input type="text" name="gameNameThing" value="" required/>
+        Game_url(optional): <input type="url" name="url" value="" />
+        Release_date(optional):<input type="date" name="date" value=""/>
+        Genre,(horror, sandbox, RPG, FPS, etc...)(optional): <input type="text" name="genre" value="" />
+        creator: <input type="text" name="creator" value="<%=loginName%>" />
         <button class="btn" type="submit" name="submit">Save Item</button>
 
     </form>

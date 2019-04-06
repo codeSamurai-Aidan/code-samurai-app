@@ -10,11 +10,28 @@
 
     <table class="highlight">
         <tr>
-            <th>Song</th><th>Singer</th><th>Added By</th><th>Likes</th><th>Actions</th>
+            <th>Game</th>
+            <th>game_url</th>
+            <th>release date</th>
+            <th>genre</th>
+            <th>creator</th>
+            <th>Added By</th>
+            <th>Likes</th>
+            <th>Actions</th>
         </tr>
 
-        <% items.forEach(function(item){  %>
 
+        <% items.forEach(function(item){  %>
+        <tr>
+            <td><%=item.gameNameThing%></td>
+            <td><%=item.url%></td>
+            <td><%=item.date%></td>
+            <td><%=item.genre%></td>
+            <td><%=item.creator%></td>
+            <td><%=item.addedBy%></td>
+            <td> <a href=""><i class="material material-icons">thumb_up</i></a></td>
+            <td> <a href=""><i class="material-icons">delete</i></a></td>
+        </tr>
 
 
 
